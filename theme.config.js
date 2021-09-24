@@ -1,6 +1,6 @@
 export default {
-  github: 'https://github.com/shuding/nextra',
-  docsRepositoryBase: 'https://github.com/shuding/nextra/blob/master',
+  github: 'https://github.com/theodorusclarence',
+  docsRepositoryBase: 'https://github.com/theodorusclarence/docs/blob/master',
   titleSuffix: ' – Docs',
   logo: (
     <>
