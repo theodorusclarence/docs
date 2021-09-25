@@ -1,7 +1,7 @@
 export default {
   github: 'https://github.com/theodorusclarence',
   docsRepositoryBase: 'https://github.com/theodorusclarence/docs/blob/master',
-  titleSuffix: ' – Docs',
+  titleSuffix: ' - docs.theodorusclarence.com',
   logo: (
     <>
       <span className="hidden mr-2 font-extrabold md:inline">DOCS</span>
@@ -18,23 +18,23 @@ export default {
       <meta httpEquiv="Content-Language" content="en" />
       <meta
         name="description"
-        content="Docs: Theodorus Clarence's Documentation"
+        content="Theodorus Clarence’s documentation about practices on development"
       />
       <meta
         name="og:description"
-        content="Docs: Theodorus Clarence's Documentation"
+        content="Theodorus Clarence’s documentation about practices on development"
       />
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:image"
-        content="https://theodorusclarence.com/large-og.jpg"
+        content="https://docs.theodorusclarence.com/og.jpg"
       />
-      <meta name="twitter:site:domain" content="nextra.vercel.app" />
+      <meta name="twitter:site:domain" content="docs.theodorusclarence.com" />
       <meta name="twitter:url" content="https://docs.theodorusclarence.com/" />
-      <meta name="og:title" content="Nextra: Next.js static site generator" />
+      <meta name="og:title" content="Docs - theodorusclarence" />
       <meta
         name="og:image"
-        content="https://theodorusclarence.com/large-og.jpg"
+        content="https://docs.theodorusclarence.com/og.jpg"
       />
       <meta name="apple-mobile-web-app-title" content="Nextra" />
       <link
