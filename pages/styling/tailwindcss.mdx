@@ -1,0 +1,89 @@
+# Tailwind CSS
+
+In Tailwind CSS v2 there is a feature called JIT Compiler that speeds up the compilation process.
+
+Here is a basic structure of a page that I usually use with Next.js and Tailwind CSS
+
+```jsx
+import * as React from 'react'
+import Seo from '@/components/Seo'
+
+export default function PageName() {
+  return (
+    <>
+      <Seo templateTitle="Page Name" />
+
+      <main>
+        <section className="">
+          <div className="layout"></div>
+        </section>
+      </main>
+    </>
+  )
+}
+```
+
+## Layout Class
+
+This is not Tailwind CSS specific, I also use this for projects with Vanilla CSS.
+
+```css
+.layout {
+  /* 1100px */
+  max-width: 68.75rem;
+  @apply w-11/12 mx-auto;
+}
+
+/* or without Tailwind CSS */
+
+.layout {
+  max-width: 68.75rem;
+  margin: 0 auto;
+  width: 90%;
+}
+```
+
+Here is some preview of what it does:
+![Layout](https://theodorusclarence.com/images/blogs/tailwindcss-best-practice/layout.gif)
+
+## Utilize Framework & Library
+
+Tailwind CSS classnames can get ugly, especially when we have a lot of repeated classes. So, it is useful to use Framework such as React to make it into components.
+
+I also use a library called [clsx](https://npm.im/clsx) to make it easier to use build variants on components, also grouping classnames into functionality.
+
+For example:
+
+```jsx
+import clsx from 'clsx'
+
+export default function Button({
+  children,
+  className = '',
+  variants = 'primary',
+  ...rest
+}) {
+  return (
+    <button
+      {...rest}
+      className={clsx(
+        'py-2 px-4 rounded font-bold hover:text-primary-400 animated-underline',
+        'border border-gray-600',
+        'focus:outline-none focus-visible:text-primary-400',
+        {
+          'bg-dark text-white': variants === 'primary',
+          'bg-white text-dark hover:bg-gray-200 hover:text-dark focus-visible:text-dark':
+            variants === 'secondary',
+        },
+        className
+      )}
+    >
+      {children}
+    </button>
+  )
+}
+```
+
+### Additional Resource
+
+If you want to learn more about my best practice using Tailwind CSS, I recommend to read [this article](https://theodorusclarence.com/blog/tailwindcss-best-practice).

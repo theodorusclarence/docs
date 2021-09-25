@@ -1,0 +1,64 @@
+# CSS / SCSS
+
+Doing CSS is not really a problem for me. I try to cover all of the basics and the fundamentals and got the hang of it.
+
+Some developers struggle with CSS, because they think CSS is an easy language that can be learned in a span of few weeks. But CSS is quite complex. They don't give you an error if you do something wrong, they just give you messed up layout.
+
+Probably the most important thing in CSS is learning how do they work. CSS is created by us developers too, if it is made by humans, then we can to find how do they work, and why they do it that way. CSS has a lot of properties and has to cover a lot of different styling aspects. So, try to look at the bigger picture.
+
+## Learn The Fundamentals
+
+import Callout from 'nextra-theme-docs/callout'
+
+<Callout emoji="💡">
+  Try to learn CSS Fundamentals first before jumping into Bootstrap, Tailwind
+  CSS, Chakra, or other libraries. Imagine struggling at a job because they
+  don't use your preferred CSS framework.
+</Callout>
+
+Using libraries is very useful, especially component libraries, just call out some `.btn` or `.modal` and it just works. But, sooner or later you are going to change that framework to meet your design. **And you are most likely going to use Vanilla CSS**.
+
+If you have not covered your fundamentals, this will be a problem. CSS Frameworks throw in a lot of styling and you probably don't know what does what, and how to reset it. Actually resetting the base style from Bootstrap or other CSS Frameworks is a nightmare. I prefer making it from scratch with Tailwind CSS or Vanilla CSS.
+
+> Something to note, if you covered the fundamentals, you can learn and straightly use any CSS Frameworks just by quickly reading the documentation.
+
+## CSS Reset
+
+Browser are inconsistent. There are many such as Internet Explorer, Safari, Chrome, Firefox, etc, and they're all different with their ways of doing things. So, it is very important to reset the stylesheet agent so we get a consistent result in all sort of browsers.
+
+There are some reset that you can choose
+
+- [CSS Reset](https://meyerweb.com/eric/tools/css/reset/)
+- [CSS Normalize](https://github.com/necolas/normalize.css/blob/master/normalize.css)
+
+The difference is The CSS Reset fully resets all of the stylesheet agent including font-sizes, margins and paddings. The CSS Normalize don't, they just fix up the quirks of the browsers.
+
+I personally preferred CSS Reset because it's more convenient not having to reset default styles. But, don't forget to add the focus styles.
+
+## Lobotomized Owl
+
+This is a technique created by [Heydon Pickering](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/), and it is a great way to add `margin-top` to second to last element in a div.
+
+Imagine you have a list, and you want to separate it of each other. We can probably just add margin-top to every `li` element, or worse use equal padding on top and bottom—by the way, please don't do this, do not use padding to move position of your items, use margin instead. But by using margin we have an excess margin on the first element (check figure a).
+
+![Lobotomized](https://alistapart.com/wp-content/uploads/2014/10/owl_1.png?w=960)
+
+As with figure b, we don't get an excess margin on the first element, because we are selecting the second consecutive element.
+
+The code implementation should look like this:
+
+```css highlight=1
+* + * {
+  margin-top: 0.5em;
+}
+```
+
+But, with that approach, we are giving all such elements margin-top, we can do that, but it is better to create a custom class so you can add it to elements that you want to separate.
+
+```css highlight=1
+.flow-content * + * {
+  margin-top: 0.5em;
+}
+```
+
+Therefore just throw in `.flow-content` and you get the desired effect. We can also add CSS Variables so the space is more customizable.
