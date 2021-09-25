@@ -1,4 +1,7 @@
 {
   "index": "Introduction",
-  "react": "React"
+  "commit": "Commit Message",
+  "styling": "Styling",
+  "react": "React",
+  "libraries": "Libraries"
 }
