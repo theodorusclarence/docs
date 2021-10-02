@@ -3,5 +3,6 @@
   "commit": "Commit Message",
   "styling": "Styling",
   "react": "React",
-  "libraries": "Libraries"
+  "libraries": "Libraries",
+  "extension": "VSCode Extensions"
 }
