@@ -1,7 +1,7 @@
 export default {
   github: 'https://github.com/theodorusclarence',
   docsRepositoryBase: 'https://github.com/theodorusclarence/docs/blob/master',
-  titleSuffix: ' - docs.theodorusclarence.com',
+  titleSuffix: ' - docs.thcl.dev',
   logo: (
     <>
       <span className="hidden mr-2 font-extrabold md:inline">DOCS</span>
@@ -25,18 +25,15 @@ export default {
         content="Theodorus Clarence’s documentation about practices on development"
       />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta
-        name="twitter:image"
-        content="https://docs.theodorusclarence.com/og.jpg"
-      />
-      <meta name="twitter:site:domain" content="docs.theodorusclarence.com" />
-      <meta name="twitter:url" content="https://docs.theodorusclarence.com/" />
+      <meta name="twitter:image" content="https://docs.thcl.dev/og.jpg" />
+      <meta name="twitter:site:domain" content="docs.thcl.dev" />
+      <meta name="twitter:url" content="https://docs.thcl.dev/" />
       <meta name="og:title" content="Docs - theodorusclarence" />
+      <meta name="og:image" content="https://docs.thcl.dev/og.jpg" />
       <meta
-        name="og:image"
-        content="https://docs.theodorusclarence.com/og.jpg"
+        name="apple-mobile-web-app-title"
+        content="Docs - theodorusclarence"
       />
-      <meta name="apple-mobile-web-app-title" content="Nextra" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -74,6 +71,18 @@ export default {
   nextLinks: true,
   footer: true,
   footerEditLink: 'Edit this page on GitHub',
-  footerText: <>© {new Date().getFullYear()} Theodorus Clarence.</>,
+  footerText: (
+    <>
+      © {new Date().getFullYear()}{' '}
+      <a
+        href="https://theodorusclarence.com?ref=docs"
+        target="_blank"
+        rel="noopener"
+      >
+        Theodorus Clarence
+      </a>
+      .
+    </>
+  ),
   unstable_faviconGlyph: '👋',
 }
