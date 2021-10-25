@@ -64,6 +64,13 @@ export default {
         href="/favicon-16x16.png"
       />
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+      <script
+        async
+        defer
+        data-website-id="a1ad7cb6-4189-4930-aa8e-34a0fef859a8"
+        src="https://umami.thcl.dev/umami.js"
+        data-domains="docs.thcl.dev"
+      />
     </>
   ),
   search: true,
