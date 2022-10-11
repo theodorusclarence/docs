@@ -1,0 +1,55 @@
+# GitHub Sync
+
+Sync 2 repositories on push.
+
+## Generate Personal Access Token
+
+The GitHub Account must have **access to both repositories.**
+
+1. Visit [Token Settings](https://github.com/settings/tokens)
+2. Generate new token
+
+   ![CleanShot 2022-10-03 at 21.46.07@2x.png](/images/github/github-sync/github-sync-1.png)
+
+3. Fill as below, this will be used to force push changes to the production repository
+
+   ![CleanShot 2022-10-03 at 22.23.07@2x.png](/images/github/github-sync/github-sync-2.png)
+
+4. Copy the Personal Access Token and save it.
+
+   ![CleanShot 2022-10-03 at 21.48.29@2x.png](/images/github/github-sync/github-sync-3.png)
+
+## Development Repository Setup
+
+1. Save this workflow as `.github/workflows/git-sync.yml`
+
+```yaml highlight=9,17,19
+name: Git Sync
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  git-sync:
+    if: ${{ github.repository == 'username/dev-repo-name' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+      - name: 🔗 Synchronize Repository
+        uses: wei/git-sync@v3
+        with:
+          source_repo: 'https://username:${{ secrets.PAT }}@github.com/username/dev-repo-name.git'
+          source_branch: 'main'
+          destination_repo: 'https://username:${{ secrets.PAT }}@github.com/username/production-repo-name.git'
+          destination_branch: 'main'
+```
+
+2. Add PAT to the GitHub secrets
+
+   ![Untitled](/images/github/github-sync/github-sync-4.png)
+
+## Production Repository Setup
+
+No setup needed.
