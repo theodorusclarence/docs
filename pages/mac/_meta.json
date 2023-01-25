@@ -1,0 +1,6 @@
+{
+  "dock-config": "Dock Configuration",
+  "iterm": "iTerm2 Configuration",
+  "zsh": "ZSH Configuration",
+  "fnm": "Fast Node Manager"
+}
