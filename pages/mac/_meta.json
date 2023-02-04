@@ -2,5 +2,6 @@
   "dock-config": "Dock Configuration",
   "iterm": "iTerm2 Configuration",
   "zsh": "ZSH Configuration",
-  "fnm": "Fast Node Manager"
+  "fnm": "Fast Node Manager",
+  "bash-shortcuts": "Bash Workflow Shortcuts"
 }
