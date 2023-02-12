@@ -4,7 +4,7 @@ Bash scripts I use to make my life easier.
 
 ## Vercel Deploy
 
-Open vercel deploy page with the current git repo as the source.
+Open Vercel deploy page with the current git repo as the source.
 
 ```sh filename="vc.sh" copy
 #!/bin/bash
@@ -23,7 +23,7 @@ fi
 
 ## Checkout Main and Delete
 
-Checkout to main branch and delete the previous branch.
+Checkout to the main branch and delete the previous branch.
 
 ```sh filename="main-and-delete-branch.sh" copy
 #!/bin/bash
@@ -47,6 +47,6 @@ fi
 
 ## Git Emergency
 
-Save your current changes and push it to a remote branch.
+Save your current changes and push them to a remote branch.
 
 [Code in GitHub](https://github.com/theodorusclarence/git-emergency/blob/main/git-emergency.sh)
