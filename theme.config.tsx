@@ -89,7 +89,7 @@ const config: DocsThemeConfig = {
         <meta name="image" property="og:image" content={image} />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="image" />
+        <meta name="twitter:image" content={image} />
         <meta name="twitter:site:domain" content="docs.thcl.dev" />
         <meta name="twitter:url" content={`https://docs.thcl.dev${asPath}`} />
 
