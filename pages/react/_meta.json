@@ -1,4 +1,5 @@
 {
   "react-imports": "React Imports",
+  "jsx-one-parent": "Why JSX can only have one parent element",
   "snippets": "Snippets"
 }
