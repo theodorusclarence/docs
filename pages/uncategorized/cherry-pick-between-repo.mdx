@@ -1,0 +1,90 @@
+# Take Commits Between Repositories
+
+## Source
+
+Copy the commit hash
+
+![Source Image Hash](/images/uncategorized/cherry-pick-between-repo/CleanShot_2023-02-28_at_22.19.472x.png)
+
+For example, I want to take this commit: `eccde65`
+
+## Replica
+
+> I’ll use term **replica** for other repositories that might use the same starter/components.
+
+1. Add the **source** remote to the **\*\***\*\***\*\***replica**\*\***\*\***\*\*** repository
+
+   ```bash
+   git remote add source https://github.com/theodorusclarence/aether-design-system.git
+   #              ^you can name it whatever you like
+   ```
+
+2. Fetch remote
+
+   ```bash
+   git fetch source
+   #         ^or your remote name
+
+   git fetch --all
+   # ^if you're feeling lazy (fetch all available repo)
+   ```
+
+3. Cherry pick
+
+   ```bash
+   git cherry-pick eccde65
+   ```
+
+   If you have multiple commits to pick from, for example these 3:
+
+   ![multiple commit images](/images/uncategorized/cherry-pick-between-repo/Untitled.png)
+
+   put the oldest commit first, the order matters
+
+   ex: `git cherry-pick 8cfc164 dee8c34 eccde65`
+
+4. Done
+
+   ![cherry pick applied](/images/uncategorized/cherry-pick-between-repo/Untitled%201.png)
+
+   it works even if you have other commits that are different from the **source**
+
+## Common Case: Conflict
+
+It’s quite common, don’t panic
+
+For example, you have a commit in the **replica** that changed PaginatedTable
+
+![replica changes](/images/uncategorized/cherry-pick-between-repo/Untitled%202.png)
+
+And you also have a different change on the **source’s** commit `eccde65`
+
+![source's commit](/images/uncategorized/cherry-pick-between-repo/Untitled%203.png)
+
+It will create a conflict like this
+
+![conflict in terminal](/images/uncategorized/cherry-pick-between-repo/Untitled%204.png)
+
+![conflict in vscode](/images/uncategorized/cherry-pick-between-repo/Untitled%205.png)
+
+Solve them, add to staging, then continue the cherrypick
+
+```bash
+git cherry-pick --continue
+```
+
+### Demo Video
+
+Here's a demo
+
+<iframe
+  style={{
+    aspectRatio: '16/9',
+  }}
+  width="100%"
+  src="https://www.youtube.com/embed/585eNahJYeQ"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowFullScreen
+/>
