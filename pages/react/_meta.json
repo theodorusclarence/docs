@@ -1,5 +1,6 @@
 {
   "react-imports": "React Imports",
+  "namespace-vs-named": "Namespace vs Named Imports",
   "jsx-one-parent": "Why JSX can only have one parent element",
   "snippets": "Snippets"
 }
